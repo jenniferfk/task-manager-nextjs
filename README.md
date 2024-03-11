@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Task Management App with Next.js and Redux
 
-## Getting Started
+Live demo: https://dapper-axolotl-0a7855.netlify.app/ 
+(deployment made with netifly)
 
-First, run the development server:
+## App Features:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Users can create, delete and access categories
+- Categories are stored locally using browser localStorage for persistence.
+- Users can add, edit, mark as completed, and delete tasks within each category
+- Tasks are stored locally using browser localStorage for persistence.
+- Tasks can be marked as completed, with completed tasks visually distinguished from active tasks.
+- Completed tasks can be viewed separately from active tasks
+- When a category is selected, only tasks belonging to that category are displayed.
+- Integration with external APIs to fetch and manage tasks.
+- The application is designed to be responsive, ensuring usability across various devices and screen sizes.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Challenges Faced:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Server-Side rendering task wasn't clear in instructions so I had to make a category for API Tasks that can't be edited or deleted, containing tasks titles with a view details button to actually view the title and image of the task. When I opened the API in Postman, only the titles showing in the task fields were shown, so I considered them as task titles and their image too (first task doesn't contain any image ) and i fetched them in the tasks list. But in other categories i used the localStorage to stock the tasks 
+- I had problems with useDispatch and Provider when i tried to include them in my project but realized later that i can't use them along with many more such as connect, useStore...
+- Router in next.js was a bit challenging but I researched for help on the web and I think I got it right.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## More Information:
+Still got more work and practice to do with next.js but i managed to finish this assignment in two days. 
